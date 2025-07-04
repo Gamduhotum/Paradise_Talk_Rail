@@ -2,9 +2,9 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 import os, json
 
-API_ID = int(os.environ.get("API_ID"))
-API_HASH = os.environ.get("API_HASH")
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
+API_ID = 23455230
+API_HASH = "1740e4541ec18b9cdd3e5ff6f3687d46"
+BOT_TOKEN = "7140345540:AAHYzt2feDZBS8GqSmeAlPA1lawUYEIP7Q8"
 
 app = Client("demand_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
@@ -26,9 +26,9 @@ async def start(client, message: Message):
     save_user(message.from_user.id)
     await message.reply_text(
         "**👋 Welcome to ᎮᏗᏒᏗᎴᎥᏕᏋ🚩**\n\n"
-        "📩 Apna demand yahan bhejein – video, PDF, course, ya notes\n"
-        "⚡ Fast response team active hai!\n"
-        "🔒 Aapka request safe hai — bas bhejo 👇"
+        "📩 Apna demand bhejo — hum try karenge wo jaldi se laane ka - 🎥 Video, 📚 Notes, 📄 PDF\n"
+         "🔒 All requests are private\n"
+         "👇 Just send your request now!\n"
     )
 
 @app.on_message(filters.private & filters.text & ~filters.command(["start", "broadcast", "stats"]))
